@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Product Imagesr</h2>
+<mat-dialog-content class="mat-typography">
+    <app-file-upload [options]="options"></app-file-upload>
+
+    <mat-card class="product-image-card" *ngFor="let image of images" [id]="image.id">
+        <mat-card-header>
+            <input type="radio" name="img" (click)="showCase(image.id)" />
+        </mat-card-header>
+        <mat-card-content></mat-card-content>
+        <img mat-card-image [src]="image.path">
+        <mat-card-actions>
+            <button mat-button class="product-delete-button" (click)="deleteImage(image.id)">DELETE</button>
+        </mat-card-actions>
+    </mat-card>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

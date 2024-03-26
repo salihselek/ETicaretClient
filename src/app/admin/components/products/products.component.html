@@ -1,0 +1,9 @@
+<button mat-raised-button class="btn m-2" color="primary" (click)="showProductQrCodeReading()">QR Code Reading</button>
+<mat-drawer-container class="product-create">
+    <mat-drawer mode="side" opened>
+        <app-create (createdProduct)="createdProduct($event)"></app-create>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-list></app-list>
+    </mat-drawer-content>
+</mat-drawer-container>
